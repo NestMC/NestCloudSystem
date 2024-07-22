@@ -1,0 +1,21 @@
+package org.nestmc.cloud.core.setup.requests;
+
+import jline.console.ConsoleReader;
+import org.nestmc.cloud.core.logging.Logger;
+
+import java.io.IOException;
+import java.util.function.Consumer;
+
+public class StringRequest {
+
+    public void request(final Logger logger, final String request, final ConsoleReader reader, final Consumer<String> accept) throws IOException {
+        logger.info(request);
+        final String input = reader.readLine();
+        if (input.trim().isEmpty()) {
+            this.request(logger, request, reader, accept);
+        } else {
+            accept.accept(input);
+        }
+    }
+
+}

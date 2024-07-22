@@ -1,0 +1,3 @@
+org\nestmc\cloud\command\Command.class
+org\nestmc\cloud\command\CommandHandler.class
+org\nestmc\cloud\command\Command$CommandInfo.class
